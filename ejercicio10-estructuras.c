@@ -6,10 +6,13 @@ struct alumno {
 	char apellido[50];
 	float notaDeAcceso;
 };
-/*DiseÒe una estructura que represente un alumno, con los datos nombre, apellidos y nota de
+/*Dise√±e una estructura que represente un alumno, con los datos nombre, apellidos y nota de
 acceso a la universidad. Realiza un programa que pida los datos de los alumnos que forman el
-grupo y los almacene en un vector de alumnos. El programa debe indicar cu·l es la media de la
-nota de acceso del grupo.*/void main() {
+grupo y los almacene en un vector de alumnos. El programa debe indicar cu√°l es la media de la
+nota de acceso del grupo.
+*/
+
+void main() {
 	struct alumno alumnos[N];
 	int i;
 	float media = 0;
@@ -33,4 +36,6 @@ nota de acceso del grupo.*/void main() {
 	media = media / N;
 	printf("La media de las notas de acceso de la clase es: %.2f \n", media);
 
-	system("PAUSE");}
+	system("PAUSE");
+	
+}
