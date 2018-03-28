@@ -12,13 +12,8 @@ struct producto {
 
 void main() {
 	struct producto producto[NUMPROD];
-	//int numprod;
 	int i = 0, j;
 	float minimo, aux;
-
-	/*printf("Introduce cuantos productos desea comparar\n");
-	scanf_s("%d", &numprod);
-	*/
 
 	for (i = 0; i < NUMPROD; i++) {
 		printf("Dame el precio del producto %d\n", i + 1);
