@@ -55,7 +55,7 @@ void main() {
 //calculamos sueldo de cada empleado.
 	fprintf(salida, "EL SUELDO SEMANAL ES:\n");
 	for (i = 0;i < N;i++) {
-		fprintf(salida, "%d. Codigo de empleado: %d\tSueldo semanal: %.2f \n", i + 1, empleados[i].codigo, empleados[i].sueldo);
+		fprintf(salida, "%d. Codigo de empleado: %d\tSueldo: %.2f \n", i + 1, empleados[i].codigo, empleados[i].sueldo);
 	}
 	//Sueldo anual.
     for (i = 0;i < N;i++) {
@@ -64,7 +64,7 @@ void main() {
 	
 	fprintf(salida, "EL SUELDO ANUAL ES:\n");
 	for (i = 0;i < N;i++) {
-		fprintf(salida, "%d. Codigo de empleado: %d\tSueldo semanal: %.2f \n", i+1,empleados[i].codigo, empleados[i].sueldo);
+		fprintf(salida, "%d. Codigo de empleado: %d\tSueldo: %.2f \n", i+1,empleados[i].codigo, empleados[i].sueldo);
 	}
 
 	fclose(salida);//cerramos el fichero de salida.
