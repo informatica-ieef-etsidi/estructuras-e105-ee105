@@ -3,7 +3,7 @@
 #define TAMVECTOR 50
 
 struct producto {
-	float coste, precio, beneficio[TAMVECTOR];
+	float coste, precio, beneficio;
 	int cantidadVendida;
 	char codigoBarras[TAMVECTOR];
 };
@@ -26,13 +26,13 @@ void main() {
 		scanf_s("%d", &mercancia[i].cantidadVendida);
 	}
 	for (i = 0; i < n; i++) {
-		mercancia[i].beneficio[i] = mercancia[i].cantidadVendida*(mercancia[i].precio - mercancia[i].coste);
+		mercancia[i].beneficio = mercancia[i].cantidadVendida*(mercancia[i].precio - mercancia[i].coste);
 	}
 	for (i = 0; i < n; i++) {
-		printf("El producto con codigo de barras %s aporto un beneficio de %f euros.\n", mercancia[i].codigoBarras, mercancia[i].beneficio[i]);
+		printf("El producto con codigo de barras %s aporto un beneficio de %f euros.\n", mercancia[i].codigoBarras, mercancia[i].beneficio);
 	}
 	for (i = 0; i < n; i++) {
-		beneficioTotal += mercancia[i].beneficio[i];
+		beneficioTotal += mercancia[i].beneficio;
 	}
 	printf("El beneficio total fue de %f euros.\n", beneficioTotal);
 	system("pause");
