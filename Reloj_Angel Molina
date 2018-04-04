@@ -1,0 +1,100 @@
+// Angel Molina Molina
+//Reloj
+
+#include<stdio.h>
+
+struct Reloj {
+	int horas;
+	int minutos;
+	int segundos;
+};
+
+void main() {
+	struct Reloj reloj;
+	char opcion;
+	int horapuesta = 0;// si es 0 aun no se ha puesto ninguna hora al reloj
+	while (1) {
+		printf("Elige una opcion:\n P:Poner en hora el reloj\n I:Incrementar un segundo\n M:Mostrar la hora completa\n");
+		scanf_s("%c", &opcion);
+		switch (opcion)
+		{
+		case 'p':
+		case 'P':
+			printf("Has elegido poner en hora el reloj\n");
+			printf("Pon las horas:\n");
+			scanf_s("%d", &reloj.horas);
+
+			do {
+				printf("tiene que estar entre 0-24h\n");
+				printf("Pon las horas:\n");
+				scanf_s("%d", &reloj.horas);
+
+			} while (reloj.horas > 24 || reloj.horas < 0);
+
+
+
+
+			printf("Pon los minutos:\n");
+			scanf_s("%d", &reloj.minutos);
+			do {
+				printf("tiene que estar entre 0-60 mins\n");
+				printf("Pon los minutos:\n");
+				scanf_s("%d", &reloj.minutos);
+			} while (reloj.minutos > 60 || reloj.minutos < 0);
+
+			printf("Pon los segundos:\n");
+			scanf_s("%d", &reloj.segundos);
+			do {
+				printf("tiene que estar entre 0-60 seg\n");
+				printf("Pon los segundos:\n");
+				scanf_s("%d", &reloj.segundos);
+			} while (reloj.segundos > 60 || reloj.segundos < 0);
+
+			horapuesta = 1;// ya esta puesta la hora
+
+			break;
+		case 'i':
+		case 'I':
+
+			printf("Has elegido incrementar un segundo\n");
+			if (reloj.segundos < 60) {
+				reloj.segundos++;
+			}
+			else if (reloj.segundos == 60 && reloj.minutos < 60) {
+				reloj.minutos++;
+				reloj.segundos = 0;
+			}
+			else if (reloj.segundos == 60 && reloj.horas < 60) {
+				reloj.minutos = 0;
+				reloj.segundos = 0;
+				reloj.horas++;
+			}
+			else {
+				reloj.minutos = 0;
+				reloj.segundos = 0;
+				reloj.horas = 0;
+				printf("Nuevo dia\n");
+			}
+			printf("Son las %dh %dmins %dseg\n", reloj.horas, reloj.minutos, reloj.segundos);
+			break;
+		case 'm':
+		case 'M':
+			if (horapuesta == 0)
+				printf("Primero pon la hora\n");
+			else {
+				printf("Has elegido mostrar la hora completa\n");
+				printf("Son las %dh %dmins %dseg\n", reloj.horas, reloj.minutos, reloj.segundos);
+			}
+			break;
+		default:
+			printf("opcion incorrecta\n");
+			break;
+		}
+		system("pause");
+		system("cls");
+		getchar();
+
+	}
+
+
+}
