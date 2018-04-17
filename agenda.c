@@ -1,3 +1,4 @@
+//programa que gestiona una agenda.
 #include <stdio.h>
 #define TAM 100
 
@@ -58,7 +59,7 @@ void main() {
 			for (j = 0; j <= i; j++) {
 				k = 0;
 				no_es = 0;
-				while ((persona[j].nombre[k] != '\0') && (temp.nombre[k]!='\0')) {
+				while ((persona[j].nombre[k] != '\0') && (temp.nombre[k]!='\0')) {//busca hasta encontrsr un nombre que coincida
 					if (persona[j].nombre[k] != temp.nombre[k]) {
 						no_es++;
 						break;
@@ -79,6 +80,7 @@ void main() {
 			else {
 				system("cls");
 				printf("Nombre: %s\nTlf: %d\nCumple %d agnos el %d/%d\n", persona[j].nombre, persona[j].telefono, (agno - persona[j].cumpleagnos.agno), persona[j].cumpleagnos.dia, persona[j].cumpleagnos.mes);
+				imprime los datos
 				system("pause");
 				system("cls");
 			}
@@ -94,7 +96,7 @@ void main() {
 				cumple[j] = -1;
 			}
 			k = 0;
-			for (j = 0; j <= i; j++) {
+			for (j = 0; j <= i; j++) {//busca todos los contactos con esa fecha de cumpleagnos y guarda su posicion en un vector
 				if ((temp.cumpleagnos.dia == persona[j].cumpleagnos.dia) && (temp.cumpleagnos.mes == persona[j].cumpleagnos.mes)) {
 					cumple[k] = j;
 					k++;
@@ -107,7 +109,7 @@ void main() {
 			else {
 				printf("Los contactos encontrados son:\n");
 				j = 0;
-				while (cumple[j] != -1) {
+				while (cumple[j] != -1) {//imprime todos los contactos que cumplen agnos en esa fecha
 					printf("Nombre: %s\nTlf: %d\nCumple %d agnos el %d/%d\n\n", persona[cumple[j]].nombre, persona[cumple[j]].telefono, (agno - persona[cumple[j]].cumpleagnos.agno), persona[cumple[j]].cumpleagnos.dia, persona[cumple[j]].cumpleagnos.mes);
 						j++;
 				}
@@ -117,9 +119,14 @@ void main() {
 			}
 		case 'A':
 		case 'a':
-			printf("Que agno es? : ");
+			printf("Que agno es? : ");//para calcular cuantos agnos cumple la persona por defecto se toma el agno 2018 pero se puede cambiar con esta opcion
 			scanf_s("%d", agno);
 			getchar();
+			break;
+		default:
+			printf("Opcion incorrecta.\n");
+			system("pause");
+			system("cls");
 		}
 	} while (s == 1);
 
